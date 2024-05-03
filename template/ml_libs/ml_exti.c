@@ -43,7 +43,7 @@ void exti_pin_init(EXTI_Pnx_enum pin)
 // @param	  trigger    选择触发方式(上升沿/下降沿)
 // @param	  priority   设置中断优先级(0~15)
 // @return		void  
-// Sample usage:		exti_init(EXTI_PA5,UP_Trigger,0);
+// Sample usage:		exti_init(EXTI_PA5,RISING,0);
 //-------------------------------------------------------------------------------------------------------------------
 void exti_init(EXTI_Pnx_enum pin,EXTI_Trigger_enum trigger,uint8_t priority)
 {
@@ -57,7 +57,7 @@ void exti_init(EXTI_Pnx_enum pin,EXTI_Trigger_enum trigger,uint8_t priority)
 	
 	EXTI->IMR |= 1<<(pin/3);  //开启中断
 	
-	if(trigger == UP_Trigger)
+	if(trigger == RISING)
 		EXTI->RTSR |= 1<<(pin/3); //上升沿触发
 	else
 		EXTI->FTSR |= 1<<(pin/3); //下降沿触发

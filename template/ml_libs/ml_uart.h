@@ -5,9 +5,9 @@
 
 typedef enum
 {
-		UART_1  =  0x00,
-	  UART_2  =  0x01,
-	  UART_3  =  0x02,
+		UART_1  =  0x00,  // PA9 -> TX     PA10 -> RX
+	  UART_2  =  0x01,  // PA2 -> TX     PA3 -> RX
+	  UART_3  =  0x02,  // PB10 -> TX    PB11 -> RX
 }UARTn_enum;
 
 void uart_pin_init(UARTn_enum uartn);

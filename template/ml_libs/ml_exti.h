@@ -33,8 +33,8 @@ typedef enum
 
 typedef enum
 {
-	UP_Trigger,
-	DOWM_Trigger,
+	RISING,       //上升沿触发
+	FALLING,      //下降沿触发
 }EXTI_Trigger_enum;
 
 void exti_init(EXTI_Pnx_enum pin,EXTI_Trigger_enum trigger,uint8_t priority);
