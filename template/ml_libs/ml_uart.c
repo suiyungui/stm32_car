@@ -6,6 +6,38 @@
 USART_TypeDef *uart_index[3] = { USART1 , USART2 , USART3 };
 
 //-------------------------------------------------------------------------------------------------------------------
+//以下代码添加后 可以使用printf函数 需要初始化串口UART_1
+#if 1
+#pragma import(__use_no_semihosting)             
+//标准库需要的支持函数                 
+struct __FILE 
+{ 
+	int handle; 
+	/* Whatever you require here. If the only file you are using is */ 
+	/* standard output using printf() for debugging, no file handling */ 
+	/* is required. */ 
+}; 
+/* FILE is typedef’ d in stdio.h. */ 
+FILE __stdout;       
+//定义_sys_exit()以避免使用半主机模式    
+void _sys_exit(int x) 
+{ 
+	x = x; 
+} 
+//重定向fputc函数
+//printf的输出，指向fputc，由fputc输出到串口
+//这里使用串口1(USART1)输出printf信息
+int fputc(int ch, FILE *f)
+{
+	while(USART1->SR&0x40);  //等待发送完成
+	USART1->DR = (uint8_t) ch;  
+	return ch;
+}
+#endif 
+//-------------------------------------------------------------------------------------------------------------------
+
+
+//-------------------------------------------------------------------------------------------------------------------
 // @brief		串口引脚初始化
 // @param		uartn		选择串口
 // @return		void  

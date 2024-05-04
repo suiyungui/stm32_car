@@ -20,6 +20,15 @@ void TIM3_IRQHandler(void)
 	}
 }
 
+void TIM4_IRQHandler(void)
+{
+	if(TIM4->SR&1)
+	{
+		//此处编写中断代码
+		TIM4->SR &= ~1; 
+	}
+}
+
 
 //以下为串口中断服务函数
 void USART1_IRQHandler(void)
@@ -55,7 +64,7 @@ void USART3_IRQHandler(void)
 
 
 //以下为外部中断服务函数
-void EXTI0_IRQHandler(void)
+void EXTI0_IRQHandler(void) // PA0/PB0/PC0
 {
 	if(EXTI->PR&(1<<0))
 	{
@@ -65,7 +74,7 @@ void EXTI0_IRQHandler(void)
 	}
 }
 
-void EXTI1_IRQHandler(void)
+void EXTI1_IRQHandler(void) // PA1/PB1/PC1
 {
 	if(EXTI->PR&(1<<1))
 	{
@@ -74,7 +83,7 @@ void EXTI1_IRQHandler(void)
 		EXTI->PR = 1<<1; //清除标志位
 	}
 }
-void EXTI2_IRQHandler(void)
+void EXTI2_IRQHandler(void) // PA2/PB2/PC2
 {
 	if(EXTI->PR&(1<<2))
 	{
@@ -83,7 +92,7 @@ void EXTI2_IRQHandler(void)
 		EXTI->PR = 1<<2; //清除标志位
 	}
 }
-void EXTI3_IRQHandler(void)
+void EXTI3_IRQHandler(void) // PA3/PB3/PC3
 {
 	if(EXTI->PR&(1<<3))
 	{
@@ -92,7 +101,7 @@ void EXTI3_IRQHandler(void)
 		EXTI->PR = 1<<3; //清除标志位
 	}
 }
-void EXTI4_IRQHandler(void)
+void EXTI4_IRQHandler(void) // PA4/PB4/PC4
 {
 	if(EXTI->PR&(1<<4))
 	{
@@ -104,21 +113,21 @@ void EXTI4_IRQHandler(void)
 
 void EXTI9_5_IRQHandler(void)
 {
-	if(EXTI->PR&(1<<5))   //EXTI5
+	if(EXTI->PR&(1<<5))   //EXTI5  PA5/PB5/PC5
 	{
 		//此处编写中断代码
 
 		EXTI->PR = 1<<5; //清除标志位
 	}
 	
-	if(EXTI->PR&(1<<6))   //EXTI6
+	if(EXTI->PR&(1<<6))   //EXTI6  PA6/PB6/PC6
 	{
 		//此处编写中断代码
 		
 		EXTI->PR = 1<<6; //清除标志位
 	}
 	
-	if(EXTI->PR&(1<<7))   //EXTI7
+	if(EXTI->PR&(1<<7))   //EXTI7  PA7/PB7/PC7
 	{
 		//此处编写中断代码
 		

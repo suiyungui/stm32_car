@@ -58,9 +58,9 @@ void pwm_pin_init(TIMn_CHn_enum timn_chn)
 // @param	  timn_chn		选择定时器通道(可选用的通道参考ml_pwm.h中的枚举定义)
 // @param	  fre		定义频率
 // @return		void  
-// Sample usage:	pwm_init(TIM_2,TIM2_CH1,50,0);     占空比=CCR/(ARR+1)=CCR*fre/10000 占空比范围0到1 所以CCR即duty的值不超过10000/fre   
+// Sample usage:	pwm_init(TIM_2,TIM2_CH1,50);     
 //-------------------------------------------------------------------------------------------------------------------
-void pwm_init(TIMn_enum timn,TIMn_CHn_enum timn_chn,int fre,int duty)
+void pwm_init(TIMn_enum timn,TIMn_CHn_enum timn_chn,int fre)
 { 
 	uint8_t ch = timn_chn%4+1;
 	RCC->APB1ENR |= 1<<timn;
@@ -74,28 +74,28 @@ void pwm_init(TIMn_enum timn,TIMn_CHn_enum timn_chn,int fre,int duty)
 		{
 			tim_index[timn]->CCMR1 |= 7<<4;	   //设置PWM2模式
 			tim_index[timn]->CCMR1 |= 1<<3;       //预装载使能
-			tim_index[timn]->CCR1 = duty;            //初始化CCR值为duty
+			tim_index[timn]->CCR1 = 0;            //初始化CCR值为0
 			break;
 		}
 		case 2:
 		{
 			tim_index[timn]->CCMR1 |= 7<<12;	   //设置PWM2模式	
       tim_index[timn]->CCMR1 |= 1<<11;			 //预装载使能
-			tim_index[timn]->CCR2 = duty;            //初始化CCR值为duty
+			tim_index[timn]->CCR2 = 0;            //初始化CCR值为0
 			break;
 		}
 		case 3:
 		{
 			tim_index[timn]->CCMR2 |= 7<<4;	   //设置PWM2模式
       tim_index[timn]->CCMR2 |= 1<<3;			 //预装载使能
-			tim_index[timn]->CCR3 = duty;            //初始化CCR值为duty
+			tim_index[timn]->CCR3 = 0;            //初始化CCR值为0
 			break;		
 		}
 		case 4:
 		{
 			tim_index[timn]->CCMR2 |= 7<<12;	   //设置PWM2模式		
       tim_index[timn]->CCMR2 |= 1<<11;			 //预装载使能
-			tim_index[timn]->CCR4 = duty;            //初始化CCR值为duty
+			tim_index[timn]->CCR4 = 0;            //初始化CCR值为0
 			break;				
 		}
 	

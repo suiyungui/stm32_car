@@ -21,7 +21,7 @@ typedef enum
 }TIMn_CHn_enum;  //枚举定义定时器通道
 
 void pwm_pin_init(TIMn_CHn_enum timn_chn);
-void pwm_init(TIMn_enum timn,TIMn_CHn_enum timn_chn,int fre,int duty);
+void pwm_init(TIMn_enum timn,TIMn_CHn_enum timn_chn,int fre);
 void pwm_duty_update(TIMn_enum timn,TIMn_CHn_enum timn_chn,int duty);
 
 #endif
