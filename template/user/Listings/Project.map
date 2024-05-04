@@ -36,14 +36,15 @@ Section Cross References
     ml_delay.o(i.delay_ms) refers to ml_delay.o(i.delay_us) for delay_us
     ml_delay.o(i.delay_s) refers to ml_delay.o(i.delay_ms) for delay_ms
     ml_nvic.o(i.NVIC_init) refers to ml_nvic.o(i.NVIC_Group_Config) for NVIC_Group_Config
-    ml_pwm.o(i.pwm_duty_update) refers to fflt_clz.o(x$fpl$fflt) for __aeabi_i2f
-    ml_pwm.o(i.pwm_duty_update) refers to fdiv.o(x$fpl$fdiv) for __aeabi_fdiv
-    ml_pwm.o(i.pwm_duty_update) refers to fmul.o(x$fpl$fmul) for __aeabi_fmul
-    ml_pwm.o(i.pwm_duty_update) refers to ffixu.o(x$fpl$ffixu) for __aeabi_f2uiz
-    ml_pwm.o(i.pwm_duty_update) refers to ml_tim.o(.data) for tim_index
     ml_pwm.o(i.pwm_init) refers to ml_pwm.o(i.pwm_pin_init) for pwm_pin_init
     ml_pwm.o(i.pwm_init) refers to ml_tim.o(.data) for tim_index
     ml_pwm.o(i.pwm_pin_init) refers to ml_gpio.o(i.gpio_init) for gpio_init
+    ml_pwm.o(i.pwm_update) refers to fflt_clz.o(x$fpl$fflt) for __aeabi_i2f
+    ml_pwm.o(i.pwm_update) refers to fflt_clz.o(x$fpl$ffltu) for __aeabi_ui2f
+    ml_pwm.o(i.pwm_update) refers to fdiv.o(x$fpl$fdiv) for __aeabi_fdiv
+    ml_pwm.o(i.pwm_update) refers to fmul.o(x$fpl$fmul) for __aeabi_fmul
+    ml_pwm.o(i.pwm_update) refers to ffixu.o(x$fpl$ffixu) for __aeabi_f2uiz
+    ml_pwm.o(i.pwm_update) refers to ml_tim.o(.data) for tim_index
     ml_tim.o(i.tim_interrupt_ms_init) refers to ml_nvic.o(i.NVIC_init) for NVIC_init
     ml_tim.o(i.tim_interrupt_ms_init) refers to ml_tim.o(.data) for tim_index
     ml_uart.o(i._sys_exit) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
@@ -70,7 +71,6 @@ Section Cross References
     ml_uart.o(i.uart_pin_init) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
     ml_uart.o(i.uart_pin_init) refers to ml_gpio.o(i.gpio_init) for gpio_init
     ml_uart.o(i.uart_sendbyte) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
-    ml_uart.o(i.uart_sendbyte) refers to ml_delay.o(i.delay_ms) for delay_ms
     ml_uart.o(i.uart_sendbyte) refers to ml_uart.o(.data) for uart_index
     ml_uart.o(i.uart_sendstr) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
     ml_uart.o(i.uart_sendstr) refers to ml_uart.o(i.uart_sendbyte) for uart_sendbyte
@@ -408,9 +408,9 @@ Removing Unused input sections from the image.
     Removing ml_delay.o(i.delay_us), (46 bytes).
     Removing ml_nvic.o(i.NVIC_Group_Config), (40 bytes).
     Removing ml_nvic.o(i.NVIC_init), (76 bytes).
-    Removing ml_pwm.o(i.pwm_duty_update), (276 bytes).
     Removing ml_pwm.o(i.pwm_init), (368 bytes).
     Removing ml_pwm.o(i.pwm_pin_init), (172 bytes).
+    Removing ml_pwm.o(i.pwm_update), (276 bytes).
     Removing ml_tim.o(i.tim_interrupt_ms_init), (112 bytes).
     Removing ml_tim.o(.data), (12 bytes).
     Removing ml_uart.o(i.fputc), (28 bytes).
@@ -418,7 +418,7 @@ Removing Unused input sections from the image.
     Removing ml_uart.o(i.uart_getbyte), (20 bytes).
     Removing ml_uart.o(i.uart_init), (100 bytes).
     Removing ml_uart.o(i.uart_pin_init), (86 bytes).
-    Removing ml_uart.o(i.uart_sendbyte), (52 bytes).
+    Removing ml_uart.o(i.uart_sendbyte), (32 bytes).
     Removing ml_uart.o(i.uart_sendstr), (26 bytes).
     Removing ml_uart.o(.data), (16 bytes).
     Removing ml_adc.o(i.adc_get), (64 bytes).
@@ -451,7 +451,7 @@ Removing Unused input sections from the image.
     Removing ml_oled.o(i.OLED_ShowString), (40 bytes).
     Removing ml_oled.o(.constdata), (1520 bytes).
 
-50 unused section(s) (total 6272 bytes) removed from the image.
+50 unused section(s) (total 6252 bytes) removed from the image.
 
 ==============================================================================
 

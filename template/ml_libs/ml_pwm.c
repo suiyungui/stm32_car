@@ -56,7 +56,7 @@ void pwm_pin_init(TIMn_CHn_enum timn_chn)
 // @brief		PWM初始化
 // @param	  timn		选择定时器(可选用的定时器参考ml_tim.h中的枚举定义)
 // @param	  timn_chn		选择定时器通道(可选用的通道参考ml_pwm.h中的枚举定义)
-// @param	  fre		定义频率
+// @param	  fre		定义频率（频率要大于15）
 // @return		void  
 // Sample usage:	pwm_init(TIM_2,TIM2_CH1,50);     
 //-------------------------------------------------------------------------------------------------------------------
@@ -64,38 +64,38 @@ void pwm_init(TIMn_enum timn,TIMn_CHn_enum timn_chn,int fre)
 { 
 	uint8_t ch = timn_chn%4+1;
 	RCC->APB1ENR |= 1<<timn;
-	tim_index[timn]->ARR = 10000/fre-1; //自动重装载值
-	tim_index[timn]->PSC = 7200-1;       //预分频器值
+	tim_index[timn]->ARR = 1000000/fre-1; //自动重装载值
+	tim_index[timn]->PSC = 72-1;       //预分频器值
   pwm_pin_init(timn_chn);
 	
 	switch(ch)
 	{
 	  case 1:
 		{
-			tim_index[timn]->CCMR1 |= 7<<4;	   //设置PWM2模式
+			tim_index[timn]->CCMR1 |= 6<<4;	   //设置PWM1模式
 			tim_index[timn]->CCMR1 |= 1<<3;       //预装载使能
-			tim_index[timn]->CCR1 = 0;            //初始化CCR值为0
+			tim_index[timn]->CCR1 = 0;            //初始化CCR值为duty
 			break;
 		}
 		case 2:
 		{
-			tim_index[timn]->CCMR1 |= 7<<12;	   //设置PWM2模式	
+			tim_index[timn]->CCMR1 |= 6<<12;	   //设置PWM1模式	
       tim_index[timn]->CCMR1 |= 1<<11;			 //预装载使能
-			tim_index[timn]->CCR2 = 0;            //初始化CCR值为0
+			tim_index[timn]->CCR2 = 0;            //初始化CCR值为duty
 			break;
 		}
 		case 3:
 		{
-			tim_index[timn]->CCMR2 |= 7<<4;	   //设置PWM2模式
+			tim_index[timn]->CCMR2 |= 6<<4;	   //设置PWM1模式
       tim_index[timn]->CCMR2 |= 1<<3;			 //预装载使能
-			tim_index[timn]->CCR3 = 0;            //初始化CCR值为0
+			tim_index[timn]->CCR3 = 0;            //初始化CCR值为duty
 			break;		
 		}
 		case 4:
 		{
-			tim_index[timn]->CCMR2 |= 7<<12;	   //设置PWM2模式		
+			tim_index[timn]->CCMR2 |= 6<<12;	   //设置PWM1模式		
       tim_index[timn]->CCMR2 |= 1<<11;			 //预装载使能
-			tim_index[timn]->CCR4 = 0;            //初始化CCR值为0
+			tim_index[timn]->CCR4 = 0;            //初始化CCR值为duty
 			break;				
 		}
 	
@@ -104,33 +104,33 @@ void pwm_init(TIMn_enum timn,TIMn_CHn_enum timn_chn,int fre)
 	tim_index[timn]->CR1 |= 0x81;        //使能计数器和ARPE
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------
 // @brief		PWM占空比更新
 // @param	  timn		选择定时器(可选用的定时器参考ml_tim.h中的枚举定义)
 // @param	  timn_chn		选择定时器通道(可选用的通道参考ml_pwm.h中的枚举定义)
 // @param	  duty    更新功率
 // @return		void  
-// Sample usage:	pwm_duty_update(TIM_2,TIM2_CH1,0);     
+// Sample usage:	pwm_update(TIM_2,TIM2_CH1,0);     
 //-------------------------------------------------------------------------------------------------------------------
-void pwm_duty_update(TIMn_enum timn,TIMn_CHn_enum timn_chn,int duty)
+void pwm_update(TIMn_enum timn,TIMn_CHn_enum timn_chn,uint16_t duty)
 {
 	uint8_t ch = timn_chn%4+1;
-	uint16_t temp = tim_index[timn]->ARR;
-	if(duty>MAX_DUTY)	duty=MAX_DUTY;
+	if(duty>=MAX_DUTY)
+		duty=MAX_DUTY;
+	uint16_t temp = tim_index[timn]->ARR;   //读取ARR
 	switch(ch)
 	{
 		case 1:
-			tim_index[timn]->CCR1 = (uint16_t)((float)duty/MAX_DUTY*(temp+1));               //更新CCR值
+			tim_index[timn]->CCR1 = (uint16_t)((float)duty/MAX_DUTY*(temp+1));               //更新CCR值为duty
 			break;
 		case 2:	
-			tim_index[timn]->CCR2 = (uint16_t)((float)duty/MAX_DUTY*(temp+1));               //更新CCR值
+			tim_index[timn]->CCR2 = (uint16_t)((float)duty/MAX_DUTY*(temp+1));               //更新CCR值为duty
 			break;
 		case 3:	
-			tim_index[timn]->CCR3 = (uint16_t)((float)duty/MAX_DUTY*(temp+1));               //更新CCR值
+			tim_index[timn]->CCR3 = (uint16_t)((float)duty/MAX_DUTY*(temp+1));               //更新CCR值为duty
 			break;		
 		case 4:
-			tim_index[timn]->CCR4 = (uint16_t)((float)duty/MAX_DUTY*(temp+1));               //更新CCR值
+			tim_index[timn]->CCR4 = (uint16_t)((float)duty/MAX_DUTY*(temp+1));               //更新CCR值为duty
 			break;					
 	}
 }

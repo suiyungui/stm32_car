@@ -22,6 +22,6 @@ typedef enum
 
 void pwm_pin_init(TIMn_CHn_enum timn_chn);
 void pwm_init(TIMn_enum timn,TIMn_CHn_enum timn_chn,int fre);
-void pwm_duty_update(TIMn_enum timn,TIMn_CHn_enum timn_chn,int duty);
+void pwm_update(TIMn_enum timn,TIMn_CHn_enum timn_chn,uint16_t duty);
 
 #endif
