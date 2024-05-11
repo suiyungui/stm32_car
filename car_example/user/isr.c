@@ -16,6 +16,8 @@ void TIM3_IRQHandler(void)
 	if(TIM3->SR&1)
 	{
 		//此处编写中断代码
+		speed_now = Encoder_count;
+		Encoder_count = 0;
 		TIM3->SR &= ~1; 
 	}
 }
@@ -88,6 +90,10 @@ void EXTI2_IRQHandler(void) // PA2/PB2/PC2
 	if(EXTI->PR&(1<<2))
 	{
 		//此处编写中断代码
+		if(gpio_get(GPIO_A, Pin_3))
+			Encoder_count --;
+		else
+			Encoder_count ++;
 		
 		EXTI->PR = 1<<2; //清除标志位
 	}
