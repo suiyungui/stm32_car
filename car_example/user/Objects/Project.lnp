@@ -2,6 +2,7 @@
 ".\objects\main.o"
 ".\objects\isr.o"
 ".\objects\motor.o"
+".\objects\pid.o"
 ".\objects\system_stm32f10x.o"
 ".\objects\startup_stm32f10x_md.o"
 ".\objects\ml_gpio.o"

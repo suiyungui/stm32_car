@@ -8,4 +8,6 @@ void encoder_init(void);
 
 extern int Encoder_count;
 extern int speed_now;
+extern uint8_t motor_dir;
+
 #endif

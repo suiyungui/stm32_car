@@ -20,3 +20,4 @@
 .\objects\ml_mpu6050.o: ..\ml_libs\ml_i2c.h
 .\objects\ml_mpu6050.o: ..\ml_libs\ml_mpu6050.h
 .\objects\ml_mpu6050.o: ..\code\motor.h
+.\objects\ml_mpu6050.o: ..\code\pid.h

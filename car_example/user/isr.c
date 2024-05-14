@@ -16,8 +16,10 @@ void TIM3_IRQHandler(void)
 	if(TIM3->SR&1)
 	{
 		//此处编写中断代码
-		speed_now = Encoder_count;
-		Encoder_count = 0;
+//		speed_now = Encoder_count;
+//		Encoder_count = 0;
+		pid_control();
+		
 		TIM3->SR &= ~1; 
 	}
 }

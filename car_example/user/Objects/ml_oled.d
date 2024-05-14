@@ -21,3 +21,4 @@
 .\objects\ml_oled.o: ..\ml_libs\ml_i2c.h
 .\objects\ml_oled.o: ..\ml_libs\ml_mpu6050.h
 .\objects\ml_oled.o: ..\code\motor.h
+.\objects\ml_oled.o: ..\code\pid.h
