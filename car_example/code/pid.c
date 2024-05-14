@@ -1,6 +1,7 @@
 #include "headfile.h"
 
 pid_t motorA;
+pid_t motorB;
 
 void pid_init(pid_t *pid, uint32_t mode, float p, float i, float d)
 {
@@ -10,17 +11,28 @@ void pid_init(pid_t *pid, uint32_t mode, float p, float i, float d)
 	pid->d = d;
 }
 
-void motor_target_set(int spe)
+void motor_target_set(int spe1, int spe2)
 {
-	if(spe >= 0)
+	if(spe1 >= 0)
 	{
-		motor_dir = 1;
-		motorA.target = spe;
+		motorA_dir = 1;
+		motorA.target = spe1;
 	}
 	else
 	{
-		motor_dir = 0;
-		motorA.target = -spe;
+		motorA_dir = 0;
+		motorA.target = -spe1;
+	}
+	
+	if(spe2 >= 0)
+	{
+		motorB_dir = 1;
+		motorB.target = spe2;
+	}
+	else
+	{
+		motorB_dir = 0;
+		motorB.target = -spe2;
 	}
 }
 
@@ -30,12 +42,16 @@ void pid_control()
 //	// 1.设定目标速度
 //	motorA.target = 200;
 	// 2.获取当前速度
-	if(motor_dir){motorA.now = Encoder_count;}else{motorA.now = -Encoder_count;}
-	Encoder_count = 0;
+	if(motorA_dir){motorA.now = Encoder_count1;}else{motorA.now = -Encoder_count1;}
+	if(motorB_dir){motorB.now = Encoder_count2;}else{motorB.now = -Encoder_count2;}
+	Encoder_count1 = 0;
+	Encoder_count2 = 0;
 	// 3.输入PID控制器进行计算
 	pid_cal(&motorA);
+	pid_cal(&motorB);
 	// 4.PID的输出值 输入给电机
-	motor_duty(motorA.out);
+	motorA_duty(motorA.out);
+	motorB_duty(motorB.out);
 }
 void pid_cal(pid_t *pid)
 {

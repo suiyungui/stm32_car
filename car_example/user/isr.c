@@ -93,9 +93,9 @@ void EXTI2_IRQHandler(void) // PA2/PB2/PC2
 	{
 		//此处编写中断代码
 		if(gpio_get(GPIO_A, Pin_3))
-			Encoder_count --;
+			Encoder_count1 --;
 		else
-			Encoder_count ++;
+			Encoder_count1 ++;
 		
 		EXTI->PR = 1<<2; //清除标志位
 	}
@@ -114,7 +114,10 @@ void EXTI4_IRQHandler(void) // PA4/PB4/PC4
 	if(EXTI->PR&(1<<4))
 	{
 		//此处编写中断代码
-		
+		if(gpio_get(GPIO_A, Pin_5))
+			Encoder_count2 ++;
+		else
+			Encoder_count2 --;
 		EXTI->PR = 1<<4; //清除标志位
 	}
 }
