@@ -12,7 +12,9 @@ int main(void)
 	pid_init(&motorA, DELTA_PID, 10, 10, 5);
 	pid_init(&motorB, DELTA_PID, 10, 10, 5);
 	
-	motor_target_set(250, 250);
+//	motor_target_set(250, 250);
+	
+	gray_init();
 	
 	tim_interrupt_ms_init(TIM_3,10,0);
 	while (1)

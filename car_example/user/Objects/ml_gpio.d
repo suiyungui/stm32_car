@@ -21,3 +21,4 @@
 .\objects\ml_gpio.o: ..\ML_LIBS\ml_mpu6050.h
 .\objects\ml_gpio.o: ..\code\motor.h
 .\objects\ml_gpio.o: ..\code\pid.h
+.\objects\ml_gpio.o: ..\code\gray_track.h

@@ -21,4 +21,5 @@
 
 #include "motor.h"
 #include "pid.h"
+#include "gray_track.h"
 #endif

@@ -21,3 +21,4 @@
 .\objects\ml_nvic.o: ..\ML_LIBS\ml_mpu6050.h
 .\objects\ml_nvic.o: ..\code\motor.h
 .\objects\ml_nvic.o: ..\code\pid.h
+.\objects\ml_nvic.o: ..\code\gray_track.h

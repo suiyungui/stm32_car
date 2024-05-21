@@ -56,8 +56,8 @@ void motor_target_set(int spe1, int spe2)
 
 void pid_control()
 {
-//	// 1.设定目标速度
-//	motorA.target = 200;
+	// 1.根据灰度传感器信息 设定目标速度
+	track();
 	// 2.获取当前速度
 	if(motorA_dir){motorA.now = Encoder_count1;}else{motorA.now = -Encoder_count1;}
 	if(motorB_dir){motorB.now = Encoder_count2;}else{motorB.now = -Encoder_count2;}

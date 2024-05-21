@@ -21,3 +21,4 @@
 .\objects\isr.o: ..\ml_libs\ml_mpu6050.h
 .\objects\isr.o: ..\code\motor.h
 .\objects\isr.o: ..\code\pid.h
+.\objects\isr.o: ..\code\gray_track.h

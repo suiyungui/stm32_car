@@ -21,3 +21,4 @@
 .\objects\ml_tim.o: ..\ML_LIBS\ml_mpu6050.h
 .\objects\ml_tim.o: ..\code\motor.h
 .\objects\ml_tim.o: ..\code\pid.h
+.\objects\ml_tim.o: ..\code\gray_track.h

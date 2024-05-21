@@ -22,3 +22,4 @@
 .\objects\ml_i2c.o: ..\ml_libs\ml_mpu6050.h
 .\objects\ml_i2c.o: ..\code\motor.h
 .\objects\ml_i2c.o: ..\code\pid.h
+.\objects\ml_i2c.o: ..\code\gray_track.h
