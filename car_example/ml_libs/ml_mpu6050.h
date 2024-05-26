@@ -1,6 +1,11 @@
 #ifndef _mpu6050_h
 #define _mpu6050_h
 #include "stdint.h"
+#include "ml_i2c.h"
+#include "math.h"
+
+// 定义外部中断引脚
+#define EXTI_INT   EXTI_PB7
 
 #define MPU6050_ADDR	   0xd0 
 #define SMPLRT_DIV       0x19
@@ -23,10 +28,10 @@
 #define GYRO_ZOUT_L      0x48
 #define PWR_MGMT_1       0x6b
 #define PWR_MGMT_2       0x6c
+#define INT_ENABLE       0x38
 #define WHO_AM_I         0x75
 
 extern int16_t ax, ay, az, gx, gy, gz;
-
 
 void MPU6050_Write(uint8_t addr, uint8_t dat);
 uint8_t MPU6050_Read(uint8_t addr);

@@ -1,7 +1,8 @@
-#include "headfile.h"
+#include "ml_mpu6050.h"
 
 int16_t ax, ay, az, gx, gy, gz;
 
+// ----------------------------------以下为软件I2C实现-----------------------------------------
 void MPU6050_Write(uint8_t addr, uint8_t dat)
 {
 	I2C_Start();
@@ -32,16 +33,20 @@ uint8_t MPU6050_Read(uint8_t addr)
 	
 	return dat;
 }
-
+//----------------------------------以上为软件I2C实现-----------------------------------------
 
 void MPU6050_Init()
 {
-	MPU6050_Write(PWR_MGMT_1, 0x01);
-	MPU6050_Write(PWR_MGMT_2, 0x00);
-	MPU6050_Write(SMPLRT_DIV, 0x09);	
-	MPU6050_Write(CONFIG, 0x06);	
-	MPU6050_Write(GYRO_CONFIG, 0x18);	
-	MPU6050_Write(ACCEL_CONFIG, 0x18);		
+	I2C_Init();
+	MPU6050_Write(PWR_MGMT_1, 0x02);   // 时钟源：PLL with Y axis gyroscope reference
+	MPU6050_Write(SMPLRT_DIV, 0x27);	 // 设置采样频率为200HZ
+	MPU6050_Write(CONFIG, 0x00);       // 失能DLPF
+	MPU6050_Write(GYRO_CONFIG, 0x18);	 // 配置陀螺仪   量程为2000
+	MPU6050_Write(ACCEL_CONFIG, 0x00); // 配置加速度计 量程为2g
+	MPU6050_Write(INT_ENABLE, 0x01);   // 使能INT引脚采样中断
+
+	exti_init(EXTI_INT,RISING,0);
+	
 }
 
 
@@ -71,10 +76,8 @@ void MPU6050_GetData()
 	data_h = MPU6050_Read(GYRO_ZOUT_H);
 	data_l = MPU6050_Read(GYRO_ZOUT_L);
 	gz = data_l | (data_h << 8);
-	
+
 }
-
-
 
 
 

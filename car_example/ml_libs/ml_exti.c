@@ -47,13 +47,16 @@ void exti_pin_init(EXTI_Pnx_enum pin)
 //-------------------------------------------------------------------------------------------------------------------
 void exti_init(EXTI_Pnx_enum pin,EXTI_Trigger_enum trigger,uint8_t priority)
 {
+	uint8_t tempoffs = ((pin/3)%4)*4;
+	uint8_t tempaddr = (pin/3)/4;
+	
 	exti_pin_init(pin);   //引脚初始化
 	
 	RCC->APB2ENR |= 1<<0;  //使能AFIO
 	
-	AFIO->EXTICR[(pin/3)/4] &= ~(0x0f<<((pin/3)%4));  //外部中断配置清零
+	AFIO->EXTICR[tempaddr] &= ~(0x0f<<tempoffs);  //外部中断配置清零
 	if(pin%3!=0)        //不是PA引脚
-		AFIO->EXTICR[(pin/3)/4] |= (1<<(pin%3))<<((pin/3)%4);  //外部中断配置
+		AFIO->EXTICR[tempaddr] |= (1<<(pin%3-1))<<tempoffs;  //外部中断配置
 	
 	EXTI->IMR |= 1<<(pin/3);  //开启中断
 	
