@@ -19,3 +19,4 @@
 .\objects\isr.o: ..\ml_libs\ml_exti.h
 .\objects\isr.o: ..\ml_libs\ml_i2c.h
 .\objects\isr.o: ..\ml_libs\ml_mpu6050.h
+.\objects\isr.o: ..\ml_libs\ml_hmc5883l.h

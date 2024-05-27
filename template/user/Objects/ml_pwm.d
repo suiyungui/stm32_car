@@ -19,3 +19,4 @@
 .\objects\ml_pwm.o: ..\ML_LIBS\ml_exti.h
 .\objects\ml_pwm.o: ..\ML_LIBS\ml_i2c.h
 .\objects\ml_pwm.o: ..\ML_LIBS\ml_mpu6050.h
+.\objects\ml_pwm.o: ..\ML_LIBS\ml_hmc5883l.h

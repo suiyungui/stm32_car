@@ -20,3 +20,4 @@
 .\objects\ml_i2c.o: ..\ml_libs\ml_exti.h
 .\objects\ml_i2c.o: ..\ml_libs\ml_i2c.h
 .\objects\ml_i2c.o: ..\ml_libs\ml_mpu6050.h
+.\objects\ml_i2c.o: ..\ml_libs\ml_hmc5883l.h

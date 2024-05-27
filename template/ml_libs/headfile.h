@@ -18,5 +18,6 @@
 #include "ml_exti.h"
 #include "ml_i2c.h"
 #include "ml_mpu6050.h"
+#include "ml_hmc5883l.h"
 
 #endif

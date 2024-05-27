@@ -4,9 +4,6 @@
 #include "ml_i2c.h"
 #include "math.h"
 
-// 定义外部中断引脚
-#define EXTI_INT   EXTI_PB7
-
 #define MPU6050_ADDR	   0xd0 
 #define SMPLRT_DIV       0x19
 #define CONFIG           0x1a

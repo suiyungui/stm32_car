@@ -6,8 +6,8 @@
 
 void I2C_Init()
 {
-	gpio_init(I2C_GPIO, I2C_SDA_GPIO_Pin, OUT_OD);
 	gpio_init(I2C_GPIO, I2C_SCL_GPIO_Pin, OUT_OD);
+	gpio_init(I2C_GPIO, I2C_SDA_GPIO_Pin, OUT_OD);
 	
 	SDA_Output(1);
 	SCL_Output(1);

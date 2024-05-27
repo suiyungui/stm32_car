@@ -398,7 +398,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\ML_LIBS\headfile.h</PathWithFileName>
+      <PathWithFileName>..\ml_libs\headfile.h</PathWithFileName>
       <FilenameWithoutPath>headfile.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -676,6 +676,30 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\ml_libs\ml_oled.h</PathWithFileName>
       <FilenameWithoutPath>ml_oled.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>4</GroupNumber>
+      <FileNumber>40</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\ml_libs\ml_hmc5883l.c</PathWithFileName>
+      <FilenameWithoutPath>ml_hmc5883l.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>4</GroupNumber>
+      <FileNumber>41</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\ml_libs\ml_hmc5883l.h</PathWithFileName>
+      <FilenameWithoutPath>ml_hmc5883l.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

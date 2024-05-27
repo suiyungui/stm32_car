@@ -506,11 +506,6 @@
               <FilePath>..\ML_LIBS\ml_uart.h</FilePath>
             </File>
             <File>
-              <FileName>ml_oled_font.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\ML_LIBS\ml_oled_font.h</FilePath>
-            </File>
-            <File>
               <FileName>ml_adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\ML_LIBS\ml_adc.c</FilePath>
@@ -559,6 +554,21 @@
               <FileName>ml_oled.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\ml_libs\ml_oled.h</FilePath>
+            </File>
+            <File>
+              <FileName>ml_oled_font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\ML_LIBS\ml_oled_font.h</FilePath>
+            </File>
+            <File>
+              <FileName>ml_hmc5883l.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ml_libs\ml_hmc5883l.c</FilePath>
+            </File>
+            <File>
+              <FileName>ml_hmc5883l.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\ml_libs\ml_hmc5883l.h</FilePath>
             </File>
           </Files>
         </Group>

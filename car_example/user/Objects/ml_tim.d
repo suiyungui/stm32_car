@@ -19,6 +19,7 @@
 .\objects\ml_tim.o: ..\ML_LIBS\ml_exti.h
 .\objects\ml_tim.o: ..\ML_LIBS\ml_i2c.h
 .\objects\ml_tim.o: ..\ML_LIBS\ml_mpu6050.h
+.\objects\ml_tim.o: ..\ML_LIBS\ml_hmc5883l.h
 .\objects\ml_tim.o: ..\code\motor.h
 .\objects\ml_tim.o: ..\code\pid.h
 .\objects\ml_tim.o: ..\code\gray_track.h
