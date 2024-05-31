@@ -1,6 +1,8 @@
 #include "ml_mpu6050.h"
 
 int16_t ax, ay, az, gx, gy, gz;
+float roll_gyro, pitch_gyro, yaw_gyro;
+float roll_acc, pitch_acc, yaw_acc;
 
 void MPU6050_Write(uint8_t addr, uint8_t dat)
 {
@@ -70,7 +72,7 @@ void MPU6050_GetData()
 	data_h = MPU6050_Read(GYRO_ZOUT_H);
 	data_l = MPU6050_Read(GYRO_ZOUT_L);
 	gz = data_l | (data_h << 8);
-
+	
 }
 
 

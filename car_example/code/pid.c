@@ -70,7 +70,7 @@ void pid_control()
 	motorA_duty(motorA.out);
 	motorB_duty(motorB.out);
 	
-	datavision_send();
+//	datavision_send();
 }
 void pid_cal(pid_t *pid)
 {

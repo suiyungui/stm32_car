@@ -142,6 +142,19 @@ void EXTI9_5_IRQHandler(void)
 	{
 		//此处编写中断代码
 		
+		// 获取原始数据
+		MPU6050_GetData();
+		
+		// 陀螺仪角度
+		roll_gyro += (float)gx / 16.4 * 0.005;
+		pitch_gyro += (float)gy / 16.4 * 0.005;
+		yaw_gyro += (float)gz / 16.4 * 0.005;
+		
+		// 加速度计角度
+		roll_acc = atan((float)ay/az) * 57.296;
+		pitch_acc = - atan((float)ax/az) * 57.296;	
+		yaw_acc = atan((float)ay/ax) * 57.296;
+
 		EXTI->PR = 1<<7; //清除标志位
 	}
 	
