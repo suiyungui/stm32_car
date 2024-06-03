@@ -23,3 +23,4 @@
 .\objects\main.o: ..\code\motor.h
 .\objects\main.o: ..\code\pid.h
 .\objects\main.o: ..\code\gray_track.h
+.\objects\main.o: ..\code\filter.h

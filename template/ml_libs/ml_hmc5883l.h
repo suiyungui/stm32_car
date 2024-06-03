@@ -22,10 +22,8 @@ void HMC5883L_Write(uint8_t addr, uint8_t dat);
 uint8_t HMC5883L_Read(uint8_t addr);
 void HMC5883L_Init(void);
 void HMC5883L_GetData(void);
-float HMC5883L_GetAngle(void);
 
 extern int16_t hmc_x, hmc_y, hmc_z;
-extern float yaw_hmc;
 
 #endif
 

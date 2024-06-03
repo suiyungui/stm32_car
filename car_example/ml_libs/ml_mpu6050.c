@@ -3,6 +3,7 @@
 int16_t ax, ay, az, gx, gy, gz;
 float roll_gyro, pitch_gyro, yaw_gyro;
 float roll_acc, pitch_acc, yaw_acc;
+float roll_Kalman, pitch_Kalman, yaw_Kalman;
 
 void MPU6050_Write(uint8_t addr, uint8_t dat)
 {

@@ -1,7 +1,5 @@
 #include "ml_hmc5883l.h"
 
-#define PI  3.14159265
-
 int16_t hmc_x, hmc_y, hmc_z;
 float yaw_hmc;
 
@@ -59,11 +57,6 @@ void HMC5883L_GetData()
 	hmc_z = data_l | (data_h << 8);
 }
 
-// ·µ»Øº½Ïò½Ç¶È
-float HMC5883L_GetAngle()
-{
-	return atan2((float)hmc_x, (float)hmc_y)*180/PI;
-}
 
 
 

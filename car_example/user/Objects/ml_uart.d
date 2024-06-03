@@ -23,3 +23,4 @@
 .\objects\ml_uart.o: ..\code\motor.h
 .\objects\ml_uart.o: ..\code\pid.h
 .\objects\ml_uart.o: ..\code\gray_track.h
+.\objects\ml_uart.o: ..\code\filter.h

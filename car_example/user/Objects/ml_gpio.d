@@ -23,3 +23,4 @@
 .\objects\ml_gpio.o: ..\code\motor.h
 .\objects\ml_gpio.o: ..\code\pid.h
 .\objects\ml_gpio.o: ..\code\gray_track.h
+.\objects\ml_gpio.o: ..\code\filter.h

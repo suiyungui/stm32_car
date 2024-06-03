@@ -31,6 +31,7 @@
 extern int16_t ax, ay, az, gx, gy, gz;
 extern float roll_gyro, pitch_gyro, yaw_gyro;
 extern float roll_acc, pitch_acc, yaw_acc;
+extern float roll_Kalman, pitch_Kalman, yaw_Kalman;
 
 void MPU6050_Write(uint8_t addr, uint8_t dat);
 uint8_t MPU6050_Read(uint8_t addr);
