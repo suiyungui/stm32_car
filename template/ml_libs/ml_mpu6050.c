@@ -1,6 +1,9 @@
 #include "ml_mpu6050.h"
 
 int16_t ax, ay, az, gx, gy, gz;
+float roll_gyro, pitch_gyro, yaw_gyro;
+float roll_acc, pitch_acc, yaw_acc;
+float roll_Kalman, pitch_Kalman, yaw_Kalman;
 
 void MPU6050_Write(uint8_t addr, uint8_t dat)
 {
@@ -35,7 +38,6 @@ uint8_t MPU6050_Read(uint8_t addr)
 
 void MPU6050_Init()
 {
-	I2C_Init();
 	MPU6050_Write(PWR_MGMT_1, 0x02);   // 时钟源：PLL with Y axis gyroscope reference
 	MPU6050_Write(SMPLRT_DIV, 0x27);	 // 设置采样频率为200HZ
 	MPU6050_Write(CONFIG, 0x00);       // 失能DLPF
@@ -71,7 +73,7 @@ void MPU6050_GetData()
 	data_h = MPU6050_Read(GYRO_ZOUT_H);
 	data_l = MPU6050_Read(GYRO_ZOUT_L);
 	gz = data_l | (data_h << 8);
-
+	
 }
 
 
