@@ -2,7 +2,7 @@
 
 ####  介绍
 
-本项目开源STM32相关例程和资料 注意：代码仅适用于STM32F1系列，目前在STM32F103C8T6上已完成测试。                                                                
+本项目开源STM32相关例程和资料                                                                                                                            **注意** ：代码仅适用于STM32F1系列，目前在STM32F103C8T6上已完成测试。                                                                
 b站教学视频：https://www.bilibili.com/video/BV1A1421671G/?spm_id_from=333.999.0.0&vd_source=c053026cfad6feccbe86fd46e528c91a
 
 **文件说明**
