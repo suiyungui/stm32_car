@@ -23,5 +23,4 @@
 .\objects\ml_oled.o: ..\ml_libs\ml_hmc5883l.h
 .\objects\ml_oled.o: ..\code\motor.h
 .\objects\ml_oled.o: ..\code\pid.h
-.\objects\ml_oled.o: ..\code\gray_track.h
 .\objects\ml_oled.o: ..\code\mcu_dmp.h

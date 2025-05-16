@@ -23,5 +23,4 @@
 .\objects\ml_i2c.o: ..\ml_libs\ml_hmc5883l.h
 .\objects\ml_i2c.o: ..\code\motor.h
 .\objects\ml_i2c.o: ..\code\pid.h
-.\objects\ml_i2c.o: ..\code\gray_track.h
 .\objects\ml_i2c.o: ..\code\mcu_dmp.h

@@ -22,7 +22,6 @@
 
 #include "motor.h"
 #include "pid.h"
-#include "gray_track.h"
 #include "mcu_dmp.h"
 
 

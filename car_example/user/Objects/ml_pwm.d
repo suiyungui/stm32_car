@@ -22,5 +22,4 @@
 .\objects\ml_pwm.o: ..\ML_LIBS\ml_hmc5883l.h
 .\objects\ml_pwm.o: ..\code\motor.h
 .\objects\ml_pwm.o: ..\code\pid.h
-.\objects\ml_pwm.o: ..\code\gray_track.h
 .\objects\ml_pwm.o: ..\code\mcu_dmp.h

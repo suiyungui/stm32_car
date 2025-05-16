@@ -22,5 +22,4 @@
 .\objects\ml_tim.o: ..\ML_LIBS\ml_hmc5883l.h
 .\objects\ml_tim.o: ..\code\motor.h
 .\objects\ml_tim.o: ..\code\pid.h
-.\objects\ml_tim.o: ..\code\gray_track.h
 .\objects\ml_tim.o: ..\code\mcu_dmp.h

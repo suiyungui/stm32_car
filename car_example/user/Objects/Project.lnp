@@ -3,7 +3,6 @@
 ".\objects\isr.o"
 ".\objects\motor.o"
 ".\objects\pid.o"
-".\objects\gray_track.o"
 ".\objects\mcu_dmp.o"
 ".\objects\wp_math.o"
 ".\objects\system_stm32f10x.o"

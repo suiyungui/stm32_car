@@ -1,7 +1,7 @@
 Dependencies for Project 'Project', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\main.c)(0x6826C942)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (..\ml_libs\headfile.h)(0x6826C53F)
+F (.\main.c)(0x68272FD2)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (..\ml_libs\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -12,7 +12,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ml_libs\ml_uart.h)(0x68257279)
 I (..\ml_libs\ml_tim.h)(0x68257279)
 I (..\ml_libs\ml_pwm.h)(0x68257279)
-I (..\ml_libs\ml_oled.h)(0x68257279)
+I (..\ml_libs\ml_oled.h)(0x68271B12)
 I (..\ml_libs\ml_delay.h)(0x68257279)
 I (..\ml_libs\ml_gpio.h)(0x68257279)
 I (..\ml_libs\ml_nvic.h)(0x68257279)
@@ -23,21 +23,20 @@ I (..\ml_libs\ml_mpu6050.h)(0x68257279)
 I (..\ml_libs\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (.\isr.c)(0x6825FC06)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\isr.o --omf_browse .\objects\isr.crf --depend .\objects\isr.d)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
 I (..\sys\system_stm32f10x.h)(0x68257279)
-I (..\ml_libs\headfile.h)(0x6826C53F)
+I (..\ml_libs\headfile.h)(0x6826CEC1)
 I (C:\develop\keil\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (C:\develop\keil\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ml_libs\ml_uart.h)(0x68257279)
 I (..\ml_libs\ml_tim.h)(0x68257279)
 I (..\ml_libs\ml_pwm.h)(0x68257279)
-I (..\ml_libs\ml_oled.h)(0x68257279)
+I (..\ml_libs\ml_oled.h)(0x68271B12)
 I (..\ml_libs\ml_delay.h)(0x68257279)
 I (..\ml_libs\ml_gpio.h)(0x68257279)
 I (..\ml_libs\ml_nvic.h)(0x68257279)
@@ -48,11 +47,10 @@ I (..\ml_libs\ml_mpu6050.h)(0x68257279)
 I (..\ml_libs\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\code\motor.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\motor.o --omf_browse .\objects\motor.crf --depend .\objects\motor.d)
 I (..\code\motor.h)(0x68257279)
-I (..\ml_libs\headfile.h)(0x6826C53F)
+I (..\ml_libs\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -63,7 +61,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ml_libs\ml_uart.h)(0x68257279)
 I (..\ml_libs\ml_tim.h)(0x68257279)
 I (..\ml_libs\ml_pwm.h)(0x68257279)
-I (..\ml_libs\ml_oled.h)(0x68257279)
+I (..\ml_libs\ml_oled.h)(0x68271B12)
 I (..\ml_libs\ml_delay.h)(0x68257279)
 I (..\ml_libs\ml_gpio.h)(0x68257279)
 I (..\ml_libs\ml_nvic.h)(0x68257279)
@@ -73,11 +71,10 @@ I (..\ml_libs\ml_i2c.h)(0x68257279)
 I (..\ml_libs\ml_mpu6050.h)(0x68257279)
 I (..\ml_libs\ml_hmc5883l.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\code\motor.h)(0x68257279)()
-F (..\code\pid.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\pid.o --omf_browse .\objects\pid.crf --depend .\objects\pid.d)
-I (..\ml_libs\headfile.h)(0x6826C53F)
+F (..\code\pid.c)(0x68272F9C)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\pid.o --omf_browse .\objects\pid.crf --depend .\objects\pid.d)
+I (..\ml_libs\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -88,7 +85,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ml_libs\ml_uart.h)(0x68257279)
 I (..\ml_libs\ml_tim.h)(0x68257279)
 I (..\ml_libs\ml_pwm.h)(0x68257279)
-I (..\ml_libs\ml_oled.h)(0x68257279)
+I (..\ml_libs\ml_oled.h)(0x68271B12)
 I (..\ml_libs\ml_delay.h)(0x68257279)
 I (..\ml_libs\ml_gpio.h)(0x68257279)
 I (..\ml_libs\ml_nvic.h)(0x68257279)
@@ -99,35 +96,8 @@ I (..\ml_libs\ml_mpu6050.h)(0x68257279)
 I (..\ml_libs\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\code\pid.h)(0x68257279)()
-F (..\code\gray_track.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\gray_track.o --omf_browse .\objects\gray_track.crf --depend .\objects\gray_track.d)
-I (..\ml_libs\headfile.h)(0x6826C53F)
-I (..\sys\stm32f10x.h)(0x68257279)
-I (..\sys\core_cm3.h)(0x68257279)
-I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
-I (..\sys\system_stm32f10x.h)(0x68257279)
-I (C:\develop\keil\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
-I (C:\develop\keil\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
-I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
-I (..\ml_libs\ml_uart.h)(0x68257279)
-I (..\ml_libs\ml_tim.h)(0x68257279)
-I (..\ml_libs\ml_pwm.h)(0x68257279)
-I (..\ml_libs\ml_oled.h)(0x68257279)
-I (..\ml_libs\ml_delay.h)(0x68257279)
-I (..\ml_libs\ml_gpio.h)(0x68257279)
-I (..\ml_libs\ml_nvic.h)(0x68257279)
-I (..\ml_libs\ml_adc.h)(0x68257279)
-I (..\ml_libs\ml_exti.h)(0x68257279)
-I (..\ml_libs\ml_i2c.h)(0x68257279)
-I (..\ml_libs\ml_mpu6050.h)(0x68257279)
-I (..\ml_libs\ml_hmc5883l.h)(0x68257279)
-I (..\code\motor.h)(0x68257279)
-I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
-I (..\code\mcu_dmp.h)(0x67B98375)
-F (..\code\gray_track.h)(0x68257279)()
 F (..\code\mcu_dmp.c)(0x6825FEAF)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\mcu_dmp.o --omf_browse .\objects\mcu_dmp.crf --depend .\objects\mcu_dmp.d)
 I (..\code\mcu_dmp.h)(0x67B98375)
 I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
@@ -147,9 +117,9 @@ F (..\sys\startup_stm32f10x_md.s)(0x68257279)(--cpu Cortex-M3 -g --apcs=interwor
 F (..\sys\core_cmInstr.h)(0x68257279)()
 F (..\sys\core_cmFunc.h)(0x68257279)()
 F (..\sys\core_cm3.h)(0x68257279)()
-F (..\ml_libs\headfile.h)(0x6826C53F)()
+F (..\ml_libs\headfile.h)(0x6826CEC1)()
 F (..\ML_LIBS\ml_gpio.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_gpio.o --omf_browse .\objects\ml_gpio.crf --depend .\objects\ml_gpio.d)
-I (..\ML_LIBS\headfile.h)(0x6826C53F)
+I (..\ML_LIBS\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -160,7 +130,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ML_LIBS\ml_uart.h)(0x68257279)
 I (..\ML_LIBS\ml_tim.h)(0x68257279)
 I (..\ML_LIBS\ml_pwm.h)(0x68257279)
-I (..\ML_LIBS\ml_oled.h)(0x68257279)
+I (..\ML_LIBS\ml_oled.h)(0x68271B12)
 I (..\ML_LIBS\ml_delay.h)(0x68257279)
 I (..\ML_LIBS\ml_gpio.h)(0x68257279)
 I (..\ML_LIBS\ml_nvic.h)(0x68257279)
@@ -171,7 +141,6 @@ I (..\ML_LIBS\ml_mpu6050.h)(0x68257279)
 I (..\ML_LIBS\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ML_LIBS\ml_gpio.h)(0x68257279)()
 F (..\ML_LIBS\ml_delay.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_delay.o --omf_browse .\objects\ml_delay.crf --depend .\objects\ml_delay.d)
@@ -181,7 +150,7 @@ I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
 I (..\sys\system_stm32f10x.h)(0x68257279)
 F (..\ML_LIBS\ml_delay.h)(0x68257279)()
 F (..\ML_LIBS\ml_nvic.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_nvic.o --omf_browse .\objects\ml_nvic.crf --depend .\objects\ml_nvic.d)
-I (..\ML_LIBS\headfile.h)(0x6826C53F)
+I (..\ML_LIBS\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -192,7 +161,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ML_LIBS\ml_uart.h)(0x68257279)
 I (..\ML_LIBS\ml_tim.h)(0x68257279)
 I (..\ML_LIBS\ml_pwm.h)(0x68257279)
-I (..\ML_LIBS\ml_oled.h)(0x68257279)
+I (..\ML_LIBS\ml_oled.h)(0x68271B12)
 I (..\ML_LIBS\ml_delay.h)(0x68257279)
 I (..\ML_LIBS\ml_gpio.h)(0x68257279)
 I (..\ML_LIBS\ml_nvic.h)(0x68257279)
@@ -203,11 +172,10 @@ I (..\ML_LIBS\ml_mpu6050.h)(0x68257279)
 I (..\ML_LIBS\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ML_LIBS\ml_nvic.h)(0x68257279)()
 F (..\ML_LIBS\ml_pwm.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_pwm.o --omf_browse .\objects\ml_pwm.crf --depend .\objects\ml_pwm.d)
-I (..\ML_LIBS\headfile.h)(0x6826C53F)
+I (..\ML_LIBS\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -218,7 +186,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ML_LIBS\ml_uart.h)(0x68257279)
 I (..\ML_LIBS\ml_tim.h)(0x68257279)
 I (..\ML_LIBS\ml_pwm.h)(0x68257279)
-I (..\ML_LIBS\ml_oled.h)(0x68257279)
+I (..\ML_LIBS\ml_oled.h)(0x68271B12)
 I (..\ML_LIBS\ml_delay.h)(0x68257279)
 I (..\ML_LIBS\ml_gpio.h)(0x68257279)
 I (..\ML_LIBS\ml_nvic.h)(0x68257279)
@@ -229,11 +197,10 @@ I (..\ML_LIBS\ml_mpu6050.h)(0x68257279)
 I (..\ML_LIBS\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ML_LIBS\ml_pwm.h)(0x68257279)()
 F (..\ML_LIBS\ml_tim.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_tim.o --omf_browse .\objects\ml_tim.crf --depend .\objects\ml_tim.d)
-I (..\ML_LIBS\headfile.h)(0x6826C53F)
+I (..\ML_LIBS\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -244,7 +211,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ML_LIBS\ml_uart.h)(0x68257279)
 I (..\ML_LIBS\ml_tim.h)(0x68257279)
 I (..\ML_LIBS\ml_pwm.h)(0x68257279)
-I (..\ML_LIBS\ml_oled.h)(0x68257279)
+I (..\ML_LIBS\ml_oled.h)(0x68271B12)
 I (..\ML_LIBS\ml_delay.h)(0x68257279)
 I (..\ML_LIBS\ml_gpio.h)(0x68257279)
 I (..\ML_LIBS\ml_nvic.h)(0x68257279)
@@ -255,11 +222,10 @@ I (..\ML_LIBS\ml_mpu6050.h)(0x68257279)
 I (..\ML_LIBS\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ML_LIBS\ml_tim.h)(0x68257279)()
 F (..\ML_LIBS\ml_uart.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_uart.o --omf_browse .\objects\ml_uart.crf --depend .\objects\ml_uart.d)
-I (..\ML_LIBS\headfile.h)(0x6826C53F)
+I (..\ML_LIBS\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -270,7 +236,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ML_LIBS\ml_uart.h)(0x68257279)
 I (..\ML_LIBS\ml_tim.h)(0x68257279)
 I (..\ML_LIBS\ml_pwm.h)(0x68257279)
-I (..\ML_LIBS\ml_oled.h)(0x68257279)
+I (..\ML_LIBS\ml_oled.h)(0x68271B12)
 I (..\ML_LIBS\ml_delay.h)(0x68257279)
 I (..\ML_LIBS\ml_gpio.h)(0x68257279)
 I (..\ML_LIBS\ml_nvic.h)(0x68257279)
@@ -281,12 +247,11 @@ I (..\ML_LIBS\ml_mpu6050.h)(0x68257279)
 I (..\ML_LIBS\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ML_LIBS\ml_uart.h)(0x68257279)()
 F (..\ML_LIBS\ml_oled_font.h)(0x68257279)()
 F (..\ML_LIBS\ml_adc.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_adc.o --omf_browse .\objects\ml_adc.crf --depend .\objects\ml_adc.d)
-I (..\ML_LIBS\headfile.h)(0x6826C53F)
+I (..\ML_LIBS\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -297,7 +262,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ML_LIBS\ml_uart.h)(0x68257279)
 I (..\ML_LIBS\ml_tim.h)(0x68257279)
 I (..\ML_LIBS\ml_pwm.h)(0x68257279)
-I (..\ML_LIBS\ml_oled.h)(0x68257279)
+I (..\ML_LIBS\ml_oled.h)(0x68271B12)
 I (..\ML_LIBS\ml_delay.h)(0x68257279)
 I (..\ML_LIBS\ml_gpio.h)(0x68257279)
 I (..\ML_LIBS\ml_nvic.h)(0x68257279)
@@ -308,11 +273,10 @@ I (..\ML_LIBS\ml_mpu6050.h)(0x68257279)
 I (..\ML_LIBS\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ML_LIBS\ml_adc.h)(0x68257279)()
 F (..\ML_LIBS\ml_exti.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_exti.o --omf_browse .\objects\ml_exti.crf --depend .\objects\ml_exti.d)
-I (..\ML_LIBS\headfile.h)(0x6826C53F)
+I (..\ML_LIBS\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -323,7 +287,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ML_LIBS\ml_uart.h)(0x68257279)
 I (..\ML_LIBS\ml_tim.h)(0x68257279)
 I (..\ML_LIBS\ml_pwm.h)(0x68257279)
-I (..\ML_LIBS\ml_oled.h)(0x68257279)
+I (..\ML_LIBS\ml_oled.h)(0x68271B12)
 I (..\ML_LIBS\ml_delay.h)(0x68257279)
 I (..\ML_LIBS\ml_gpio.h)(0x68257279)
 I (..\ML_LIBS\ml_nvic.h)(0x68257279)
@@ -334,14 +298,13 @@ I (..\ML_LIBS\ml_mpu6050.h)(0x68257279)
 I (..\ML_LIBS\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ML_LIBS\ml_exti.h)(0x68257279)()
 F (..\ml_libs\ml_mpu6050.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_mpu6050.o --omf_browse .\objects\ml_mpu6050.crf --depend .\objects\ml_mpu6050.d)
 I (..\ml_libs\ml_mpu6050.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
 I (..\ml_libs\ml_i2c.h)(0x68257279)
-I (..\ml_libs\headfile.h)(0x6826C53F)
+I (..\ml_libs\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (..\sys\system_stm32f10x.h)(0x68257279)
@@ -351,7 +314,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ml_libs\ml_uart.h)(0x68257279)
 I (..\ml_libs\ml_tim.h)(0x68257279)
 I (..\ml_libs\ml_pwm.h)(0x68257279)
-I (..\ml_libs\ml_oled.h)(0x68257279)
+I (..\ml_libs\ml_oled.h)(0x68271B12)
 I (..\ml_libs\ml_delay.h)(0x68257279)
 I (..\ml_libs\ml_gpio.h)(0x68257279)
 I (..\ml_libs\ml_nvic.h)(0x68257279)
@@ -360,12 +323,11 @@ I (..\ml_libs\ml_exti.h)(0x68257279)
 I (..\ml_libs\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ml_libs\ml_mpu6050.h)(0x68257279)()
-F (..\ml_libs\ml_i2c.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_i2c.o --omf_browse .\objects\ml_i2c.crf --depend .\objects\ml_i2c.d)
+F (..\ml_libs\ml_i2c.c)(0x6826CE45)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_i2c.o --omf_browse .\objects\ml_i2c.crf --depend .\objects\ml_i2c.d)
 I (..\ml_libs\ml_i2c.h)(0x68257279)
-I (..\ml_libs\headfile.h)(0x6826C53F)
+I (..\ml_libs\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -376,7 +338,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ml_libs\ml_uart.h)(0x68257279)
 I (..\ml_libs\ml_tim.h)(0x68257279)
 I (..\ml_libs\ml_pwm.h)(0x68257279)
-I (..\ml_libs\ml_oled.h)(0x68257279)
+I (..\ml_libs\ml_oled.h)(0x68271B12)
 I (..\ml_libs\ml_delay.h)(0x68257279)
 I (..\ml_libs\ml_gpio.h)(0x68257279)
 I (..\ml_libs\ml_nvic.h)(0x68257279)
@@ -386,12 +348,11 @@ I (..\ml_libs\ml_mpu6050.h)(0x68257279)
 I (..\ml_libs\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ml_libs\ml_i2c.h)(0x68257279)()
 F (..\ml_libs\ml_oled.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_oled.o --omf_browse .\objects\ml_oled.crf --depend .\objects\ml_oled.d)
 I (..\ml_libs\ml_oled_font.h)(0x68257279)
-I (..\ml_libs\headfile.h)(0x6826C53F)
+I (..\ml_libs\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -402,7 +363,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ml_libs\ml_uart.h)(0x68257279)
 I (..\ml_libs\ml_tim.h)(0x68257279)
 I (..\ml_libs\ml_pwm.h)(0x68257279)
-I (..\ml_libs\ml_oled.h)(0x68257279)
+I (..\ml_libs\ml_oled.h)(0x68271B12)
 I (..\ml_libs\ml_delay.h)(0x68257279)
 I (..\ml_libs\ml_gpio.h)(0x68257279)
 I (..\ml_libs\ml_nvic.h)(0x68257279)
@@ -413,13 +374,12 @@ I (..\ml_libs\ml_mpu6050.h)(0x68257279)
 I (..\ml_libs\ml_hmc5883l.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
-F (..\ml_libs\ml_oled.h)(0x68257279)()
+F (..\ml_libs\ml_oled.h)(0x68271B12)()
 F (..\ml_libs\ml_hmc5883l.c)(0x68257279)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\user -I ..\ml_libs -I ..\code -I ..\sys-IC:\develop\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD-o .\objects\ml_hmc5883l.o --omf_browse .\objects\ml_hmc5883l.crf --depend .\objects\ml_hmc5883l.d)
 I (..\ml_libs\ml_hmc5883l.h)(0x68257279)
 I (..\ml_libs\ml_i2c.h)(0x68257279)
-I (..\ml_libs\headfile.h)(0x6826C53F)
+I (..\ml_libs\headfile.h)(0x6826CEC1)
 I (..\sys\stm32f10x.h)(0x68257279)
 I (..\sys\core_cm3.h)(0x68257279)
 I (C:\develop\keil\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -430,7 +390,7 @@ I (C:\develop\keil\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (..\ml_libs\ml_uart.h)(0x68257279)
 I (..\ml_libs\ml_tim.h)(0x68257279)
 I (..\ml_libs\ml_pwm.h)(0x68257279)
-I (..\ml_libs\ml_oled.h)(0x68257279)
+I (..\ml_libs\ml_oled.h)(0x68271B12)
 I (..\ml_libs\ml_delay.h)(0x68257279)
 I (..\ml_libs\ml_gpio.h)(0x68257279)
 I (..\ml_libs\ml_nvic.h)(0x68257279)
@@ -439,6 +399,5 @@ I (..\ml_libs\ml_exti.h)(0x68257279)
 I (..\ml_libs\ml_mpu6050.h)(0x68257279)
 I (..\code\motor.h)(0x68257279)
 I (..\code\pid.h)(0x68257279)
-I (..\code\gray_track.h)(0x68257279)
 I (..\code\mcu_dmp.h)(0x67B98375)
 F (..\ml_libs\ml_hmc5883l.h)(0x68257279)()
