@@ -3,11 +3,11 @@
 .\objects\motor.o: ..\ml_libs\headfile.h
 .\objects\motor.o: ..\sys\stm32f10x.h
 .\objects\motor.o: ..\sys\core_cm3.h
-.\objects\motor.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\motor.o: C:\develop\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\motor.o: ..\sys\system_stm32f10x.h
-.\objects\motor.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\motor.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\motor.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\motor.o: C:\develop\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\motor.o: C:\develop\keil\ARM\ARMCC\Bin\..\include\string.h
+.\objects\motor.o: C:\develop\keil\ARM\ARMCC\Bin\..\include\math.h
 .\objects\motor.o: ..\ml_libs\ml_uart.h
 .\objects\motor.o: ..\ml_libs\headfile.h
 .\objects\motor.o: ..\ml_libs\ml_tim.h
@@ -24,4 +24,4 @@
 .\objects\motor.o: ..\code\motor.h
 .\objects\motor.o: ..\code\pid.h
 .\objects\motor.o: ..\code\gray_track.h
-.\objects\motor.o: ..\code\filter.h
+.\objects\motor.o: ..\code\mcu_dmp.h

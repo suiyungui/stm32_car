@@ -144,25 +144,33 @@ void EXTI9_5_IRQHandler(void)
 		
 		// 获取原始数据
 		MPU6050_GetData();
-		HMC5883L_GetData();
 		
-		// 陀螺仪角度
-		roll_gyro += (float)gx / 16.4 * 0.005;
-		pitch_gyro += (float)gy / 16.4 * 0.005;
-		yaw_gyro += (float)gz / 16.4 * 0.005;
+		// 使用mcu_dmp算法进行姿态融合
+		// 将MPU6050原始数据转换为算法需要的Axis3f格式
+		Axis3f acc, gyro;
 		
-		// 加速度计角度
-		roll_acc = atan((float)ay/az) * 57.296;
-		pitch_acc = - atan((float)ax/az) * 57.296;	
-		yaw_acc = atan((float)ay/ax) * 57.296;
+		// 加速度值转换（根据你的MPU6050配置调整比例系数）
+		// MPU6050在±2g量程下，16384 LSB/g
+		acc.x = (float)ax / 16384.0f;
+		acc.y = (float)ay / 16384.0f;
+		acc.z = (float)az / 16384.0f;
 		
-		// 磁力计角度
-		yaw_hmc = atan2((float)hmc_x, (float)hmc_y) * 57.296;
+		// 陀螺仪值转换（根据你的MPU6050配置调整比例系数）
+		// MPU6050在±2000°/s量程下，16.4 LSB/(°/s)
+		gyro.x = (float)gx / 16.4f;
+		gyro.y = (float)gy / 16.4f;
+		gyro.z = (float)gz / 16.4f;
 		
-		// 卡尔曼滤波融合角度
-		roll_Kalman = Kalman_Filter(&KF_Roll, roll_acc, (float)gx / 16.4);
-		pitch_Kalman = Kalman_Filter(&KF_Pitch, pitch_acc, (float)gy / 16.4);
-		yaw_Kalman = Kalman_Filter(&KF_Yaw, yaw_hmc, (float)gz / 16.4);
+		// 更新姿态估计，dt=0.005秒 (假设200Hz采样率)
+		imu_update(acc, gyro, 0.005f);
+		
+		// 获取欧拉角结果
+		EulerAngles angles = imu_get_euler_angles(gyro);
+		
+		// 更新全局欧拉角变量以供使用
+		roll_Kalman = angles.roll;
+		pitch_Kalman = angles.pitch;
+		yaw_Kalman = angles.yaw;
 		
 		EXTI->PR = 1<<7; //清除标志位
 	}
