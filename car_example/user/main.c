@@ -36,7 +36,7 @@ int main(void)
 		printf("yaw:%.2f  pitch:%.2f roll:%.2f\r\n", yaw_Kalman, pitch_Kalman, roll_Kalman);
 		
 //		// 在OLED上显示偏航角（来自mcu_dmp算法的结果）
-//		OLED_ShowFloat(1, 1, yaw_Kalman, 3, 2);
+		OLED_ShowFloat(1, 1, yaw_Kalman, 3, 2);
 //		
 //		// 添加俯仰角和横滚角的显示
 //		OLED_ShowFloat(2, 1, pitch_Kalman, 3, 2);
