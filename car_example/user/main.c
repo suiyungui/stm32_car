@@ -6,11 +6,12 @@ int main(void)
 	
 	motor_init();
 	encoder_init();
+	wheel_encoder_init(); // 编码器估计测距初始化
 
 	uart_init(UART_1,115200,0);
 	
-	pid_init(&motorA, DELTA_PID, 10, 10, 5);
-	pid_init(&motorB, DELTA_PID, 10, 10, 5);
+	pid_init(&motorA, DELTA_PID, 3, 5, 1);
+	pid_init(&motorB, DELTA_PID, 3, 5, 1);
 	pid_init(&angle, POSITION_PID, 2, 0, 0.5);
 	
 	// 初始化I2C和MPU6050
@@ -27,16 +28,21 @@ int main(void)
 	
 	// 初始化定时器中断，用于其他控制逻辑
 	tim_interrupt_ms_init(TIM_3,10,0);
+    
+	//motor_target_set(150, 150); // 范围0-150左右 当150时duty为45000，比较安全
 	
+    // 让小车前进50厘米 // 实际测量1m左右
+	move_distance(25.0f);
 	while (1)
 	{
-//		printf("ax:%d, ay:%d az:%d gx:%d gy:%d gz:%d\r\n", ax, ay, az, gx, gy, gz);
-//		printf("yaw:%.2f  pitch:%.2f roll:%.2f\r\n", yaw_Kalman, pitch_Kalman, roll_Kalman);
-		
+		check_distance();
+//		printf("encoder:%d\r\n", Encoder_count2);
+		printf("yaw:%.2f  pitch:%.2f roll:%.2f\r\n", yaw_Kalman, pitch_Kalman, roll_Kalman);
+
 //		// 在OLED上显示偏航角（来自mcu_dmp算法的结果）
 		OLED_ShowFloat(1, 1, yaw_Kalman, 3, 2);
 
-//		// 添加俯仰角和横滚角的显示
+		// 添加俯仰角和横滚角的显示
 //		OLED_ShowFloat(2, 1, pitch_Kalman, 3, 2);
 //		OLED_ShowFloat(3, 1, roll_Kalman, 3, 2);
 		
