@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "track.h": "c",
+        "headfile.h": "c"
+    }
+}

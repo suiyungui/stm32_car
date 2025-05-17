@@ -109,15 +109,17 @@ void check_distance(void)
 {
     if (!is_moving) return;
     
-    // 更新编码器计数
+    // 更新编码器数据
     wheel_encoder_update();
     
     // 检查是否达到目标距离
     float current_distance = (wheelA.total_distance + wheelB.total_distance) / 2.0f;
-    printf("distance:%.2f\n",current_distance);
     if (current_distance >= target_distance) {
-        // 停止电机
+        // 停止运动
         motor_target_set(0, 0);
         is_moving = 0;
+        
+        // 触发转弯状态
+        track_state = 1;
     }
 }

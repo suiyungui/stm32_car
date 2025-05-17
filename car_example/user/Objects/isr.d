@@ -23,3 +23,4 @@
 .\objects\isr.o: ..\code\motor.h
 .\objects\isr.o: ..\code\pid.h
 .\objects\isr.o: ..\code\mcu_dmp.h
+.\objects\isr.o: ..\code\track.h

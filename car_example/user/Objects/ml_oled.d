@@ -24,3 +24,4 @@
 .\objects\ml_oled.o: ..\code\motor.h
 .\objects\ml_oled.o: ..\code\pid.h
 .\objects\ml_oled.o: ..\code\mcu_dmp.h
+.\objects\ml_oled.o: ..\code\track.h

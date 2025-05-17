@@ -89,7 +89,7 @@ static float rMat[3][3];
  *    - 稳定环境：减小至0.1f
  */
 static KalmanFilter yaw_kf = {
-    .q = 0.001f,    // 过程噪声
+    .q = 0.005f,    // 过程噪声
     .r = 0.3f,     // 测量噪声
     .x = 0.0f,      // 状态估计值
     .p = 0.1f,      // 估计误差协方差
@@ -132,8 +132,8 @@ static float filtered_yaw_rate = 0.0f;
  *    - 震动环境：增大至0.8f-1.0f
  *    - 高精度需求：减小至0.3f-0.5f
  */
-static const float alpha = 0.85f;           // 低通滤波系数 (0-1)
-static const float MAX_YAW_RATE = 80.0f;    // 最大偏航角速度 (度/秒)
+static const float alpha = 0.7f;           // 低通滤波系数 (0-1)
+static const float MAX_YAW_RATE = 100.0f;    // 最大偏航角速度 (度/秒)
 static const float MAX_YAW_DELTA = 8.0f;    // 最大偏航角变化 (度)
 static const float STATIC_THRESHOLD = 0.10f;  // 静止检测阈值
 

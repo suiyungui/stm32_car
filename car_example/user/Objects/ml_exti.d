@@ -23,3 +23,4 @@
 .\objects\ml_exti.o: ..\code\motor.h
 .\objects\ml_exti.o: ..\code\pid.h
 .\objects\ml_exti.o: ..\code\mcu_dmp.h
+.\objects\ml_exti.o: ..\code\track.h

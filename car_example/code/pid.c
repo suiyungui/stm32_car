@@ -3,6 +3,8 @@
 pid_t motorA;
 pid_t motorB;
 pid_t angle;
+uint8_t turn_count = 0; // 转弯次数
+
 
 void datavision_send()  // 上位机波形发送函数
 {
@@ -54,41 +56,37 @@ void motor_target_set(int spe1, int spe2)
 	}
 }
 
-
 void pid_control()
 {
-	// 角度环
-	// 1.设定目标角度
-	angle.target = -20;
-	// 2.获取当前角度
-	angle.now = yaw_Kalman;
-	// 3.PID控制器计算输出
-	pid_cal(&angle);
+	// 转弯状态处理
+	if(track_state == 1)
+	{
+		angle_control(track_angle[turn_count]);
+		track_state = 0;
+		is_turning = 1;
+	}
 	
-	// 速度环
-	// 1.根据灰度传感器信息 设定目标速度
-	// 1.角度环PID输出 设定为速度环的目标值
-	motor_target_set(-angle.out, angle.out);
+	// 编码器数据更新
 	wheel_encoder_update();
 	Encoder_count1 = Encoder_count1 * 10;
     Encoder_count2 = Encoder_count2 * 10;
+	
 	// 获取当前速度
 	if(motorA_dir){motorA.now = Encoder_count1;}else{motorA.now = -Encoder_count1;}
 	if(motorB_dir){motorB.now = Encoder_count2;}else{motorB.now = -Encoder_count2;}
-//	printf("encoder1:%d\r\n", Encoder_count1);
+
     Encoder_count1 = 0;
 	Encoder_count2 = 0;
 	
-	// 3.输入PID控制器进行计算
+	// PID计算和电机控制
 	pid_cal(&motorA);
 	pid_cal(&motorB);
-	// 电机输出限幅
+	
 	pidout_limit(&motorA);
 	pidout_limit(&motorB);
-	// 4.PID的输出值 输入给电机
+	
 	motorA_duty(motorA.out);
 	motorB_duty(motorB.out);
-//    printf("speed:%d\r\n", (int)motorA.out);
 }
 void pid_cal(pid_t *pid)
 {
@@ -114,13 +112,6 @@ void pid_cal(pid_t *pid)
 	// 记录前两次偏差
 	pid->error[2] = pid->error[1];
 	pid->error[1] = pid->error[0];
-
-	// 输出限幅
-//	if(pid->out>=MAX_DUTY)	
-//		pid->out=MAX_DUTY;
-//	if(pid->out<=0)	
-//		pid->out=0;
-	
 }
 
 void pidout_limit(pid_t *pid)
@@ -131,9 +122,33 @@ void pidout_limit(pid_t *pid)
 	if(pid->out<=0)	
 		pid->out=0;
 }
-void angle_control(float angle)
-{
-    
 
+
+void angle_control(float target_angle)
+{
+    // 角度环
+    // 1.设定目标角度
+    angle.target = target_angle;
+    // 2.获取当前角度
+    angle.now = yaw_Kalman;
+    // 3.PID控制器计算输出
+    pid_cal(&angle);
+    
+    // 转弯速度限制（直接限制输出值）
+    float max_turn_speed = 20.0f; // 转弯最大速度
+    float turn_speed = angle.out;
+    
+    if(turn_speed > max_turn_speed) {
+        turn_speed = max_turn_speed;
+    } else if(turn_speed < -max_turn_speed) {
+        turn_speed = -max_turn_speed;
+    }
+
+    // 速度环
+    // IMU初始位置以左为正，以右为负
+    // 当angle.out为正时，表示需要向左转（左轮后退，右轮前进）
+    // 当angle.out为负时，表示需要向右转（左轮前进，右轮后退）
+    motor_target_set(-turn_speed, turn_speed);
 }
+
 

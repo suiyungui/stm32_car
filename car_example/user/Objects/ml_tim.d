@@ -23,3 +23,4 @@
 .\objects\ml_tim.o: ..\code\motor.h
 .\objects\ml_tim.o: ..\code\pid.h
 .\objects\ml_tim.o: ..\code\mcu_dmp.h
+.\objects\ml_tim.o: ..\code\track.h

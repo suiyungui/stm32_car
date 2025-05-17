@@ -25,3 +25,4 @@
 .\objects\ml_mpu6050.o: ..\code\motor.h
 .\objects\ml_mpu6050.o: ..\code\pid.h
 .\objects\ml_mpu6050.o: ..\code\mcu_dmp.h
+.\objects\ml_mpu6050.o: ..\code\track.h

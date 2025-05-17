@@ -24,3 +24,4 @@
 .\objects\ml_i2c.o: ..\code\motor.h
 .\objects\ml_i2c.o: ..\code\pid.h
 .\objects\ml_i2c.o: ..\code\mcu_dmp.h
+.\objects\ml_i2c.o: ..\code\track.h

@@ -23,3 +23,4 @@
 .\objects\ml_uart.o: ..\code\motor.h
 .\objects\ml_uart.o: ..\code\pid.h
 .\objects\ml_uart.o: ..\code\mcu_dmp.h
+.\objects\ml_uart.o: ..\code\track.h

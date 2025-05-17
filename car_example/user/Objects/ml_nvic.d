@@ -23,3 +23,4 @@
 .\objects\ml_nvic.o: ..\code\motor.h
 .\objects\ml_nvic.o: ..\code\pid.h
 .\objects\ml_nvic.o: ..\code\mcu_dmp.h
+.\objects\ml_nvic.o: ..\code\track.h

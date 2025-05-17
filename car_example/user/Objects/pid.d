@@ -23,3 +23,4 @@
 .\objects\pid.o: ..\code\motor.h
 .\objects\pid.o: ..\code\pid.h
 .\objects\pid.o: ..\code\mcu_dmp.h
+.\objects\pid.o: ..\code\track.h

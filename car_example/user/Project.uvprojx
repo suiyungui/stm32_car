@@ -429,6 +429,11 @@
               <FileType>1</FileType>
               <FilePath>..\code\WP_Math.c</FilePath>
             </File>
+            <File>
+              <FileName>track.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\code\track.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
