@@ -6,7 +6,7 @@
 
 typedef enum      
 {
-		TIM_2  =  0x00,
+      TIM_2  =  0x00,
 	  TIM_3  =  0x01,
 	  TIM_4  =  0x02,
 }TIMn_enum;     //枚举定义可选用的定时器

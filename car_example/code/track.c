@@ -2,8 +2,8 @@
 #include <math.h>
 
 uint8_t track_state = 0;    // 跟踪状态
-uint16_t track_distance[5] = {50, 80, 50, 80, 0}; // 距离设置(cm)
-float track_angle[5] = {-90.0f, -180.0f, 90.0f, 0.0f, 0.0f}; // 角度设置，-270度等价于90度
+uint16_t track_distance[5] = {30, 50, 80, 120, 0}; // 距离设置(cm)
+float track_angle[5] = {-180.0f, 0.0f, 90.0f, 0.0f, 0.0f}; // 角度设置，-270度等价于90度
 uint8_t is_turning = 0;     // 转向状态标志
 uint8_t task_complete = 0;  // 任务完成标志
 
@@ -24,9 +24,9 @@ void complete_turning()
     // 执行下一段距离运动
     if(turn_count < 3) {
         // 设置PID目标速度为前进
-        motor_target_set(50, 50); // 设置两个电机以相同速度前进
-        move_distance(track_distance[turn_count]);
         turn_count++;
+        motor_target_set(25, 25); // 设置两个电机以相同速度前进
+        move_distance(track_distance[turn_count]);
     } else {
         task_complete = 1;
         // 任务完成，停止电机
@@ -42,10 +42,10 @@ void track_init(void)
     task_complete = 0;
     turn_count = 0;
     
-    delay_ms(500); // 确保IMU稳定
+    delay_ms(1000); // 确保IMU稳定
     
     // 设置PID目标速度为前进
-    motor_target_set(50, 50); // 设置两个电机以相同速度前进
+    motor_target_set(25, 25); // 设置两个电机以相同速度前进
     
     // 开始第一段直线移动
     move_distance(track_distance[0]);
@@ -91,8 +91,28 @@ void check_turn_complete(void)
         angle_diff += 360.0f;
     }
     
-    // 转向完成条件：角度差的绝对值小于5度
-    if(fabs(angle_diff) < 5.0f) {
+    // 根据转弯次数设置不同的误差容忍度
+    float error_tolerance;
+    
+    if(turn_count == 0) { // 第一次转弯(掉头180度)
+        // 因为目标是-180度,实际控制中使用-175度,所以误差容忍度略大
+        // 这样可以处理车在接近180度边界时数据可能的波动
+        error_tolerance = 5.0f;
+    }
+    /*
+    else if(turn_count == 1) { // 第一次转弯(掉头180度)
+        // 因为目标是-180度,实际控制中使用-175度,所以误差容忍度略大
+        // 这样可以处理车在接近180度边界时数据可能的波动
+        error_tolerance = 5.0f;
+    }
+    */
+    else if(fabs(target_angle) > 170.0f) {
+                error_tolerance = 20.0f;
+            } else {
+                error_tolerance = 5.0f;
+            }  
+    // 转向完成条件：角度差的绝对值小于设定的误差容忍度
+    if(fabs(angle_diff) < error_tolerance) {
         complete_turning();
     }
 }

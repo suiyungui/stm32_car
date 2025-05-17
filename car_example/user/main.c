@@ -30,7 +30,7 @@ int main(void)
 //	motor_target_set(150, 150); // 范围0-150左右 在150时duty为45000，比较安全
 	
     track_init();  // 初始化轨迹控制
-
+    servo_angle(10);// 初始化
 	while (1)
 	{
 		track_task_check();  // 持续检查状态（包含check_distance和check_turn_complete）

@@ -6,6 +6,7 @@ void motor_init(void);
 void motorA_duty(int duty);
 void motorB_duty(int duty);
 void encoder_init(void);
+void servo_duty(int duty);
 
 extern int Encoder_count1, Encoder_count2;
 extern int speed_now;
@@ -26,4 +27,7 @@ void wheel_encoder_init(void);
 void wheel_encoder_update(void);
 void move_distance(float distance_cm);
 void check_distance(void);
+void servo_angle(uint8_t angle);
+void move_backward(float distance_cm);
+void wait_backward_complete(void);
 #endif
