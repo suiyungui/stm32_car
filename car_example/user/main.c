@@ -12,7 +12,7 @@ int main(void)
 	
 	pid_init(&motorA, DELTA_PID, 3, 5, 1);
 	pid_init(&motorB, DELTA_PID, 3, 5, 1);
-	pid_init(&angle, POSITION_PID, 0.7, 0, 0.5);  // 降低P值和D值，使转弯更缓和
+	pid_init(&angle, POSITION_PID, 0.2, 0, 2);  // 降低P值和D值，使转弯更缓和
 	
 	// 初始化I2C和MPU6050
 	I2C_Init();
@@ -34,8 +34,8 @@ int main(void)
 	while (1)
 	{
 		track_task_check();  // 持续检查状态（包含check_distance和check_turn_complete）
-		
-		printf("yaw:%.2f\r\n", yaw_Kalman);
+		printf("yaw:%.2f\r\n",yaw_Kalman);
+//		printf("motorA:%d,%d\n", (uint8_t)motorA.target,(uint8_t)motorA.now);
 
 //		// 在OLED上显示偏航角，这是mcu_dmp算法的结果
 		OLED_ShowFloat(1, 1, yaw_Kalman, 3, 2);

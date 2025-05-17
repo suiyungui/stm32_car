@@ -171,7 +171,8 @@ void EXTI9_5_IRQHandler(void)
 		roll_Kalman = angles.roll;
 		pitch_Kalman = angles.pitch;
 		yaw_Kalman = angles.yaw;
-		
+		if(fabs(yaw_Kalman) > 180)
+            yaw_Kalman = - 180;
 		EXTI->PR = 1<<7; //清除标志位
 	}
 	

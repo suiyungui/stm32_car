@@ -139,13 +139,12 @@ void angle_control(float target_angle)
     float angle_diff = angle.target - angle.now;
     
     // 处理第一次转弯，强制使用右转
-    if(turn_count == 0) {
+    if(turn_count == 0 || turn_count == 1) {
         // 强制使用右转(负值控制右转)
         // 确保angle_diff为负值，右转
         if(angle_diff > 0) {
             angle_diff -= 360.0f;
         }
-        
     } 
     // 其他情况下，选择最短路径
     else {

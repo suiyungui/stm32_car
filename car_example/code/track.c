@@ -2,8 +2,8 @@
 #include <math.h>
 
 uint8_t track_state = 0;    // 跟踪状态
-uint16_t track_distance[5] = {30, 50, 80, 120, 0}; // 距离设置(cm)
-float track_angle[5] = {-180.0f, 0.0f, 90.0f, 0.0f, 0.0f}; // 角度设置，-270度等价于90度
+uint16_t track_distance[5] = {30, 35, 58, 75, 0}; // 距离设置(cm)
+float track_angle[5] = {-180.0f, -15.0f, -170.0f, -15.0f, 0.0f}; // 角度设置，-270度等价于90度
 uint8_t is_turning = 0;     // 转向状态标志
 uint8_t task_complete = 0;  // 任务完成标志
 
@@ -99,13 +99,17 @@ void check_turn_complete(void)
         // 这样可以处理车在接近180度边界时数据可能的波动
         error_tolerance = 5.0f;
     }
-    /*
-    else if(turn_count == 1) { // 第一次转弯(掉头180度)
+    
+    else if(turn_count == 1) { // 第二次转弯(掉头180度)
         // 因为目标是-180度,实际控制中使用-175度,所以误差容忍度略大
         // 这样可以处理车在接近180度边界时数据可能的波动
-        error_tolerance = 5.0f;
+        error_tolerance = 8.0f;
     }
-    */
+    else if(turn_count == 2) { // 第三次转弯(掉头180度)
+        // 因为目标是-180度,实际控制中使用-175度,所以误差容忍度略大
+        // 这样可以处理车在接近180度边界时数据可能的波动
+        error_tolerance = 10.0f;
+    }
     else if(fabs(target_angle) > 170.0f) {
                 error_tolerance = 20.0f;
             } else {

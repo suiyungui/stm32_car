@@ -174,6 +174,34 @@ void check_distance(void)
             // 继续执行转弯
             track_state = 1;
         }
+        // 如果是第三段距离(turn_count=2)，控制舵机闭合
+        else if(turn_count == 2) {
+            // 停车后等待稳定
+            delay_ms(500);
+            
+            // 控制舵机闭合
+            servo_angle(80);
+            
+            // 等待舵机动作完成
+            delay_ms(1000);
+            
+            // 继续执行转弯
+            track_state = 1;
+        }
+        // 如果是第四段距离(turn_count=3)，控制舵机松开
+        else if(turn_count == 3) {
+            // 停车后等待稳定
+            delay_ms(500);
+            
+            // 控制舵机松开
+            servo_angle(10);
+            
+            // 等待舵机动作完成
+            delay_ms(1000);
+            
+            // 继续执行转弯
+            track_state = 1;
+        }
         else {
             // 不是特殊处理的段，直接触发转弯状态
             track_state = 1;
@@ -209,7 +237,7 @@ void move_backward(float distance_cm)
     motorB_dir = 0; // 0为反转
     
     // 启动倒车，速度稍慢
-    motor_target_set(-20, -20);
+    motor_target_set(-10, -10);
     
     // 设置目标距离（转换为毫米）
     target_distance = distance_cm * 10.0f;
