@@ -126,6 +126,13 @@ void pidout_limit(pid_t *pid)
 
 void angle_control(float target_angle)
 {
+    // 在angle_control函数开始处
+    static int last_turn_count = -1;
+    if(turn_count != last_turn_count) {
+        angle.iout = 0; // 新转弯开始，清除积分项
+        last_turn_count = turn_count;
+    }
+    
     // 角度环
     // 1.设定目标角度
     angle.target = target_angle;
@@ -139,7 +146,7 @@ void angle_control(float target_angle)
     float angle_diff = angle.target - angle.now;
     
     // 处理第一次转弯，强制使用右转
-    if(turn_count == 0 || turn_count == 1) {
+    if(turn_count == 0 || turn_count == 1 || turn_count == 2) {
         // 强制使用右转(负值控制右转)
         // 确保angle_diff为负值，右转
         if(angle_diff > 0) {

@@ -2,8 +2,8 @@
 #include <math.h>
 
 uint8_t track_state = 0;    // 跟踪状态
-uint16_t track_distance[5] = {30, 35, 58, 75, 0}; // 距离设置(cm)
-float track_angle[5] = {-180.0f, -15.0f, -170.0f, -15.0f, 0.0f}; // 角度设置，-270度等价于90度
+uint16_t track_distance[5] = {30, 35, 55, 65, 0}; // 距离设置(cm)
+float track_angle[5] = {-180.0f, 0.0f, -175.0f, -15.0f, 0.0f}; // 角度设置，-270度等价于90度
 uint8_t is_turning = 0;     // 转向状态标志
 uint8_t task_complete = 0;  // 任务完成标志
 
@@ -25,7 +25,7 @@ void complete_turning()
     if(turn_count < 3) {
         // 设置PID目标速度为前进
         turn_count++;
-        motor_target_set(25, 25); // 设置两个电机以相同速度前进
+        motor_target_set(25, 23); // 设置两个电机以相同速度前进
         move_distance(track_distance[turn_count]);
     } else {
         task_complete = 1;
@@ -45,7 +45,7 @@ void track_init(void)
     delay_ms(1000); // 确保IMU稳定
     
     // 设置PID目标速度为前进
-    motor_target_set(25, 25); // 设置两个电机以相同速度前进
+    motor_target_set(25, 24); // 设置两个电机以相同速度前进
     
     // 开始第一段直线移动
     move_distance(track_distance[0]);
